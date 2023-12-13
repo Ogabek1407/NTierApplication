@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NTierApplication.Service;
-using NTierApplication.Service.ViewModels;
-using Swashbuckle.AspNetCore.Annotations;
-
+using NTierApplication.Domain.ViewModel;
+using NTierApplication.Service.Interface;
 namespace NTierApplication.Web.Controllers
 {
     [ApiController]
@@ -18,7 +16,6 @@ namespace NTierApplication.Web.Controllers
 
         [HttpGet]
         [Route("")]
-        [SwaggerOperation(OperationId = "GetAll")]
         public ICollection<ItemViewModel> GetAll()
         {
             return ItemService.GetItems();
@@ -33,7 +30,6 @@ namespace NTierApplication.Web.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        [SwaggerOperation(OperationId = "GetById")]
         public ItemViewModel GetById(long id)
         {
             return ItemService.GetById(id);
