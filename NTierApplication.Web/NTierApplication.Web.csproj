@@ -19,4 +19,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\NTierApplication\NTierApplication.csproj" />
+    </ItemGroup>
+
 </Project>
